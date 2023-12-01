@@ -1,0 +1,95 @@
+doctype html
+html
+  head
+    title EB-2023
+    link(rel="stylesheet", href="/style.css")
+    script(type='text/javascript', src="/script.js") 
+    link(href='https://fonts.googleapis.com/css?family=Poppins', rel='stylesheet')
+  body  
+    form#frm(action='/' method='post')
+      .container 
+          .head-content 
+            p Electricity Board
+            p Domestic Tariff-2023
+          .form-content
+            .form-control       
+              input(type='text', name='txtName', id='txtName', placeholder='Name here...')
+            .form-control 
+              input(type='number', name='txtConsumption', id='txtConsumption', placeholder='Unit Consumption', max="1000", required)
+            .form-control-btn
+              input(type='submit' value='calculate')
+              input(type="submit",name='btn' class='btn' onclick="show()" value='View Bill')
+            .form-control
+              if result 
+                p Total Amount: #{result} 
+          div#contentToDownload
+            div.result  
+              p#heading Payment Receipt(cash/online) 
+              .user-detail
+                p Name: #{name}
+                p Unit: #{consumption}     
+              .payment-detail 
+                table(border='1')
+                  tbody
+                    thead(align='center')
+                      th Payment Details
+                    tr
+                      td Total: #{result}                   
+                    tr
+                      td In words: #{words}
+                    tr 
+                      td **without existing subsidy 
+                    tr 
+                      td **calculate with new subsidy(free:100 unit)
+              .print
+                input(type='submit', onclick="downloadDivContent()", value='Download') 
+                input(type='submit',onclick="printDiv()",value='Print') 
+            div.table-container
+              table.tbl1(border='1')
+                tbody
+                  tr
+                    td#table-head(colspan='2', align='center') 0 upto 500
+                  tr
+                    td#caption unit
+                    td#caption cost
+                  tr.tr_space
+                    td 0-100
+                    td free
+                  tr.tr_space
+                    td 101-200
+                    td 2.25
+                  tr.tr_space
+                    td 201-400
+                    td 4.50
+                  tr.tr_space
+                    td 401-500
+                    td 6.00
+              table.tbl2(border='1')
+                tbody
+                  tr
+                    td#table-head(colspan='2', align='center') 501 upto 1000
+                  tr
+                    td#caption unit
+                    td#caption cost
+                  tr
+                    td 0-100
+                    td free
+                  tr
+                    td 101-400
+                    td 4.50
+                  tr
+                    td 401-501
+                    td 6.00
+                  tr
+                    td 501-600
+                    td 8.00
+                  tr
+                    td 601-800
+                    td 9.00
+                  tr
+                    td 801-1000
+                    td 10.00
+                  tr
+                    td 1000
+                    td 11.00
+                          

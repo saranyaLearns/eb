@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  width: 100vw;
+  font-family: "Poppins";
+  font-size: 12px;
+  background-color: blueviolet;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.container {
+  width: 300px;
+  background-color: gainsboro;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 5px;
+}
+.container .head-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.container .head-content p {
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: rgb(93, 19, 162);
+}
+.form-content {
+  margin-bottom: 10px;
+}
+.form-control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+input[type="text"],
+input[type="number"] {
+  height: 30px;
+  width: 200px;
+  margin: 3px;
+  text-align: center;
+}
+.form-control-btn {
+  display: flex;
+  justify-content: space-evenly;
+}
+.form-control-btn input[type="submit"] {
+  height: 30px;
+  width: 70px;
+  margin: 3px;
+  background-color: blueviolet;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
+  font-size: 14px;
+}
+.form-content input[type="submit"]:hover {
+  background-color: white;
+  color: blueviolet;
+  cursor: pointer;
+  transition: 0.5s;
+}
+/*-----table------*/
+
+.table-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  column-gap: 2px;
+  margin: 5px;
+}
+table {
+  border-collapse: collapse;
+  margin: 5px 0px;
+}
+.tbl1 .tr_space {
+  height: 33.5px;
+}
+/*-----bill-----*/
+.bill {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.result {
+  height: 220px;
+  width: 280px;
+  background-color: rgb(239, 238, 238);
+  margin-left: 5px;
+  display: none;
+}
+.result #heading {
+  text-align: center;
+  font-style: italic;
+  text-decoration: underline;
+  margin: 3px 0px;
+}
+.result p {
+  font-weight: 500;
+  letter-spacing: 1;
+}
+.result .user-detail {
+  display: flex;
+  justify-content: space-evenly;
+}
+.result .payment-detail {
+  display: flex;
+  justify-content: center;
+}
+.payment-detail table {
+  height: 80px;
+  width: 250px;
+}
+.payment-detail table tr td {
+  padding: 0px 5px;
+}
+.print {
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 12px;
+}
+.print input[type="submit"] {
+  height: 30px;
+  width: 100px;
+  background-color: blueviolet;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+}
+.print input[type="submit"]:hover {
+  background-color: white;
+  color: blueviolet;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.tbl1,
+.tbl2 {
+  width: 120px;
+}
+.tbl1 #caption,
+.tbl2 #caption {
+  text-align: center;
+  font-weight: bold;
+}
+#table-head {
+  font-weight: bold;
+}
+
+/**printing**/
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  #contentToDownload,
+  #contentToDownload * {
+    visibility: visible;
+  }
+
+  #contentToDownload {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
